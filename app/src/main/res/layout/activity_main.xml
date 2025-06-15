@@ -1,19 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
+    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:background="@color/background_gray"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:text="Test osobowości"
+        tools:ignore="HardcodedText"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+    <!-- liczniki -->
+    <LinearLayout
+        android:id="@+id/duration_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        >
+        <Chronometer
+            android:id="@+id/test_duration_chronometer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="NestedWeights"
+
+            style="@style/center"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:id="@+id/time_left_counterDownTimer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="CounterDownTimer"
+            tools:ignore="HardcodedText"
+
+            style="@style/center"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+    <!-- pytania -->
+    <LinearLayout
+        android:id="@+id/questions_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/question1_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights"
+
+            style="@style/center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="Czy wolisz spędzać czas samemu, czy razem?"
+                tools:ignore="HardcodedText"
+                style="@style/question_title"
+                />
+            <RadioGroup
+                android:id="@+id/spendingTime_radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="22dp"
+                >
+                <RadioButton
+                    android:id="@+id/prefersSpendingTimeWithOthers_radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="samemu"
+                    tools:ignore="HardcodedText"
+                    />
+                <RadioButton
+                    android:id="@+id/prefersSpendingTimeAlone_radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="razem"
+                    tools:ignore="HardcodedText"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/question2_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            style="@style/center"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jakie lubisz owoce?"
+                tools:ignore="HardcodedText"
+
+                style="@style/question_title"
+                />
+                <CheckBox
+                    android:id="@+id/apple_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Jabłka"
+                    tools:ignore="HardcodedText"
+
+                    android:layout_marginStart="22dp"
+                    />
+                <CheckBox
+                    android:id="@+id/banana_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Banany"
+                    tools:ignore="HardcodedText"
+
+                    android:layout_marginStart="22dp"
+                    />
+                <CheckBox
+                    android:id="@+id/pear_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Gruszki"
+                    tools:ignore="HardcodedText"
+
+                    android:layout_marginStart="22dp"
+                    />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/question3_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            style="@style/center"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data i czas wypełnienia:"
+                tools:ignore="HardcodedText"
+
+                style="@style/question_title"
+                />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                />
+            <Button
+                android:id="@+id/open_timestamp_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otwórz kalendarz"
+                tools:ignore="HardcodedText"
+
+                style="@style/center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            style="@style/center"
+            >
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:text="Wyślij"
+                tools:ignore="HardcodedText"
+
+                android:backgroundTint="#AD4141"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+    <!--
+    RadioButton (wybór jednej opcji) - / kotlin
+    Chronometer – mierzy czas trwania quizu - / kotlin
+    CountDownTimer – ogranicza czas na udzielenie odpowiedzi - / kotlin
+    CheckBox (wielokrotny wybór) - / kotlin
+    DatePicker i TimePicker (stample czasowy, do określenia, kiedy wypełniono formularz) - ❌
+    Button – do zakończenia quizu - ❌
+    Intent – przejście do drugiej aktywności z wynikiem - ❌
+    -->
+
+    <!--                    <DatePicker
+                            android:id="@+id/date_DatePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:datePickerMode="calendar"
+                            />
+                        <TimePicker
+                            android:id="@+id/time_hours_minutes_TimePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:timePickerMode="clock"
+                            />-->

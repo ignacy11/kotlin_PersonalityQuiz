@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="heading">
+        <item name="android:textSize">32sp</item>
+        <item name="fontWeight">700</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="question_title">
+        <item name="android:textSize">20sp</item>
+        <item name="fontWeight">700</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="center">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+</resources>
