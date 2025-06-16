@@ -29,7 +29,7 @@
         android:orientation="horizontal"
         >
         <Chronometer
-            android:id="@+id/test_duration_chronometer"
+            android:id="@+id/quiz_duration_chronometer"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -39,7 +39,7 @@
             android:textSize="24sp"
             />
         <TextView
-            android:id="@+id/time_left_counterDownTimer"
+            android:id="@+id/time_left_countdown_timer"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -132,7 +132,6 @@
                     android:layout_height="30dp"
                     android:text="Banany"
                     tools:ignore="HardcodedText"
-
                     android:layout_marginStart="22dp"
                     />
                 <CheckBox
@@ -149,37 +148,61 @@
             android:id="@+id/question3_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.75"
             android:orientation="vertical"
 
             style="@style/center"
             >
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="Data i czas wypełnienia:"
                 tools:ignore="HardcodedText"
 
                 style="@style/question_title"
                 />
-            <Space
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="12dp"
-                />
-            <Button
-                android:id="@+id/open_timestamp_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Otwórz kalendarz"
-                tools:ignore="HardcodedText"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
 
                 style="@style/center"
-                />
+                >
+                <Button
+                    android:id="@+id/open_timestamp_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otwórz kalendarz"
+                    tools:ignore="HardcodedText"
+
+                    style="@style/center"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    style="@style/center"
+                    >
+                    <TextView
+                        android:id="@+id/date_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/time_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.6"
             style="@style/center"
             >
             <Button
@@ -199,20 +222,7 @@
     Chronometer – mierzy czas trwania quizu - / kotlin
     CountDownTimer – ogranicza czas na udzielenie odpowiedzi - / kotlin
     CheckBox (wielokrotny wybór) - / kotlin
-    DatePicker i TimePicker (stample czasowy, do określenia, kiedy wypełniono formularz) - ❌
-    Button – do zakończenia quizu - ❌
+    DatePicker i TimePicker (stample czasowy, do określenia, kiedy wypełniono formularz) - / kotlin
+    Button – do zakończenia quizu - ✔
     Intent – przejście do drugiej aktywności z wynikiem - ❌
     -->
-
-    <!--                    <DatePicker
-                            android:id="@+id/date_DatePicker"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:datePickerMode="calendar"
-                            />
-                        <TimePicker
-                            android:id="@+id/time_hours_minutes_TimePicker"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:timePickerMode="clock"
-                            />-->
